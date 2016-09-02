@@ -135,6 +135,10 @@ glShaderFactory::SetupResource(shader& shd) {
             shd.bindUniformBlock(ubBindStage, ubBindSlot, glUniformBlockBindPoint);
             glUniformBlockBindPoint++;
             ORYOL_GL_CHECK_ERROR();
+
+            GLint ubDataSize = 0;
+            glGetActiveUniformBlockiv(glProg, glUBIndex, GL_UNIFORM_BLOCK_DATA_SIZE, &ubDataSize);
+            Log::Info("UNIFORM_BLOCK_DATA_SIZE: %d\n", ubDataSize);
         }
         else
         #endif

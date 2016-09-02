@@ -47,6 +47,7 @@ ShapeApp::OnRunning() {
     int primGroupIndex = 0;
     for (const auto& pos : positions) {
         this->params.ModelViewProjection = this->computeMVP(pos);
+        this->params.Bla = 2.0f;
         Gfx::ApplyUniformBlock(this->params);
         Gfx::Draw(primGroupIndex++);
     }
